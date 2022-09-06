@@ -32,7 +32,8 @@ public class Task03 {
         String[] result = new String[3];
         int count = 0;
         for (int i = 0; i < array.length; i+=6) {
-            builder.append("Студент ").append(array[i+1]).append(" получил ").append(array[i+3]).append(" по предмету ").append(array[i+5]);
+            builder.append("Студент ").append(array[i+1]).append(" получил ").append(array[i+3]).append(" по предмету ")
+                    .append(array[i+5]);
             result[count++] = builder.toString();
             builder.setLength(0);
         }
@@ -50,7 +51,8 @@ public class Task03 {
     }
 
     private static String[] extractParams(String data) {
-        data = data.substring(2, data.length() - 2).replace(',', ':').replace('{', ':').replace('}', ':').replace('"', ':');
+        data = data.substring(2, data.length() - 2).replace(',', ':').replace('{', ':')
+                .replace('}', ':').replace('"', ':');
         String[] tmp = data.split(":");
         String[] array = new String[tmp.length];
         int count = 0;
